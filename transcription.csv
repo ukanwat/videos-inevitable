@@ -1,0 +1,481 @@
+start_time,end_time,duration,text
+0.12,2.92,2.80,"Okay, so why were AI agents inevitable?"
+3.02,4.28,1.26,2017.
+5.44,6.56,1.12,Google drops this paper.
+7.08,8.40,1.32,Attention is all you need.
+8.96,9.96,1.00,And here's what's wild.
+10.54,12.22,1.68,This wasn't just another research paper.
+12.78,14.06,1.28,This was the first domino.
+14.72,15.82,1.10,And nobody saw it coming.
+16.60,19.06,2.46,Because what happened next wasn't planned.
+20.34,22.64,2.30,Each breakthrough unlocked something incredible.
+23.32,25.84,2.52,That incredible thing immediately slammed into a wall
+26.06,29.12,3.06,and hitting that wall forced someone
+29.24,31.96,2.72,"to invent the next breakthrough, like dominoes falling."
+32.82,33.88,1.06,Except nobody set them up.
+33.90,36.28,2.38,They just fell.
+37.32,39.28,1.96,"One after another, unstoppable."
+40.44,41.02,0.58,Seven years.
+41.90,45.12,3.22,That's all it took from that paper to AI agents
+45.22,47.18,1.96,that can reason and plan like humans.
+48.30,49.98,1.68,"Not because anyone designed it that way,"
+50.76,52.78,2.02,because each limitation left no other choice.
+53.46,54.86,1.40,The chain was inevitable.
+56.06,57.28,1.22,Let me show you how it happened.
+57.76,61.80,4.04,"The foundation, how attention actually works, transformers,"
+62.50,65.76,3.26,"the innovation that started everything, the key idea,"
+66.86,68.60,1.74,"generate text one word at a time,"
+68.88,71.66,2.78,"left to right, each word only knows what came before it."
+72.84,73.86,1.02,Never what comes after.
+75.02,76.94,1.92,This is called auto regressive generation
+77.08,79.84,2.76,"and it sounds simple, but it unlocked everything."
+80.70,82.98,2.28,Inside the decoder sits the attention mechanism.
+83.30,86.62,3.32,"And this, this is what we need to understand."
+87.52,90.02,2.50,Because everything that came after builds on this one idea.
+90.62,92.92,2.30,Watch what happens when the model generates the sentence.
+93.96,95.18,1.22,The cat sat on the mat.
+95.56,96.50,0.94,We're at the last word.
+96.50,98.42,1.92,The model needs to predict mat.
+99.48,100.68,1.20,"But to predict it accurately,"
+100.68,103.10,2.42,it needs to know which previous words actually matter.
+104.00,104.92,0.92,Is cat important?
+105.22,105.79,0.57,Probably not.
+105.79,106.68,0.89,Is on important?
+107.26,107.50,0.24,Very.
+108.14,109.24,1.10,That's what attention solves.
+109.46,112.28,2.82,It lets the model look at every previous word and decide.
+113.24,115.72,2.48,How relevant is this word to what I'm generating right now?
+116.92,117.60,0.68,Here's how it works.
+117.92,120.28,2.36,"For every word, the model computes three things."
+121.64,121.96,0.32,Query.
+123.22,124.08,0.86,What am I looking for?
+125.22,128.36,3.14,"The current word asking what context it needs, key."
+129.36,130.10,0.74,What do I represent?
+131.34,134.14,2.80,"Every previous word advertising what it contains, value."
+135.24,136.10,0.86,Here's what I'll contribute.
+136.22,138.38,2.16,The actual information each word carries.
+139.00,139.54,0.54,Now the math.
+140.48,142.18,1.70,Take the query and compare it to every key.
+142.18,143.82,1.64,This gives you similarity scores.
+144.96,146.88,1.92,Turn those scores into weights that sum to one.
+147.74,151.52,3.78,"Finally, use those weights to mix together all the values."
+152.28,154.28,2.00,Words you paid more attention to contribute more.
+154.90,156.36,1.46,Words you ignored contribute less.
+156.86,157.48,0.62,That's your output.
+157.54,159.62,2.08,A weighted blend of all previous words.
+161.12,162.36,1.24,Now watch what actually happens.
+162.58,166.28,3.70,"When generating mat, the model pays huge attention to the and on."
+166.50,169.44,2.94,Like 70% of its attention goes to those two words.
+169.58,170.86,1.28,But cat and sat?
+171.34,171.90,0.56,Almost nothing.
+173.06,173.30,0.24,Why?
+174.12,175.06,0.94,Nobody programmed this.
+175.22,177.60,2.38,The model learned from billions of examples.
+178.24,182.04,3.80,"It saw on the mat, on the floor, on the table."
+182.62,185.46,2.84,"So many times that it figured out, after on the,"
+185.78,186.90,1.12,you usually get a surface.
+188.10,190.02,1.92,This pattern emerged purely from data.
+190.84,192.22,1.38,That's what's wild about attention.
+192.34,195.24,2.90,The model discovers which words matter just from exposure.
+196.42,198.10,1.68,"No explicit rules, just patterns."
+198.78,200.96,2.18,"And because each word only sees backwards,"
+201.12,203.10,1.98,"never forward, you can keep generating."
+203.48,204.92,1.44,"Word after word, that's the loop."
+206.42,207.70,1.28,But here's where it gets interesting.
+209.20,209.68,0.48,Temperature.
+210.56,213.24,2.68,Temperature controls how the model picks the next word.
+213.58,214.40,0.82,Think of it like this.
+214.80,217.72,2.92,The model has a probability for every possible next word.
+218.74,222.44,3.70,Mat 60% floor 25% rug 12%.
+223.26,225.00,1.74,Temperature reshapes these probabilities.
+225.74,226.88,1.14,Temperature 0.1?
+227.76,229.42,1.66,The model becomes almost deterministic.
+230.46,232.90,2.44,Mat shoots up to 99% predictable boring.
+233.56,235.46,1.90,"Temperature 1, that's the natural distribution."
+236.54,239.10,2.56,Mat 60% floor 25% balanced.
+240.32,241.94,1.62,"Temperature 2, everything flattens."
+243.06,246.92,3.86,"Mat drops to 35%, even weird options get decent probability."
+248.16,249.72,1.56,"Creative, sometimes weird."
+250.88,252.54,1.66,So temperature isn't just randomness.
+252.68,254.43,1.75,It's like choosing between autopilot
+254.43,256.70,2.27,and manual steering through probability space.
+257.62,259.14,1.52,Low temperature is autopilot.
+259.90,261.28,1.38,Always takes the safest path.
+262.16,263.34,1.18,High temperature is manual.
+264.16,265.38,1.22,Sometimes brilliant roots.
+266.18,267.54,1.36,Sometimes you drive off a cliff.
+268.26,269.64,1.38,So GPT 3 launches.
+270.56,271.90,1.34,And it's genuinely impressive.
+272.86,273.92,1.06,Can complete your code.
+274.74,275.68,0.94,Write in different styles.
+276.74,277.52,0.78,People are amazed.
+278.30,281.90,3.60,"But then someone asks, what's the capital of France?"
+283.20,284.14,0.94,"Simple question, right?"
+284.86,287.82,2.96,"And it goes, what's the capital of Spain?"
+288.84,290.02,1.18,What's the capital of Germany?
+291.22,292.30,1.08,The weather is nice today.
+293.00,294.78,1.78,Did you know France has excellent wine?
+295.84,297.88,2.04,"And you're sitting there like, what?"
+298.04,299.06,1.02,What just happened?
+299.86,301.34,1.48,The model isn't broken.
+302.18,304.16,1.98,It's doing exactly what it was trained to do.
+305.34,307.40,2.06,The training objective was predict the next word
+307.40,308.80,1.40,based on all previous words.
+309.18,309.66,0.48,That's it.
+310.02,311.92,1.90,And it was trained on internet text.
+312.98,314.72,1.74,Internet text is full of forum threads
+314.82,317.30,2.48,where someone asks a question and the responses ramble.
+318.66,319.18,0.52,Topic drift.
+320.28,320.76,0.48,Tangents.
+321.92,324.50,2.58,That pattern exists everywhere in the training data.
+325.38,327.80,2.42,"So when you ask, what's the capital of France?"
+328.26,329.10,0.84,The model.
+330.28,332.14,1.86,Generates what would plausibly come next
+332.26,333.50,1.24,in an internet conversation.
+334.26,335.24,0.98,And that might be rambling.
+335.86,336.84,0.98,That's limitation one.
+338.02,339.88,1.86,The model has no concept of being helpful.
+340.46,340.64,0.18,None.
+341.40,341.66,0.26,Zero.
+342.60,343.84,1.24,It's just predicting text.
+344.38,345.78,1.40,It doesn't know what you actually want.
+346.28,348.08,1.80,"It's a prediction engine, nothing more,"
+348.70,351.12,2.42,which meant someone had to teach it what helpful actually
+351.12,351.58,0.46,means.
+353.18,353.84,0.66,Teaching models.
+355.28,355.92,0.64,What we want.
+356.38,358.62,2.24,Remember that unhelpful GPT3?
+359.20,360.28,1.08,Here's how they fixed it.
+361.18,362.68,1.50,And the solution is kind of genius.
+363.14,365.34,2.20,You can't just write a loss function for be helpful.
+366.74,368.80,2.06,What's the mathematical definition of helpfulness?
+369.26,369.86,0.60,There isn't one.
+370.72,372.36,1.64,And you can't just show it examples either.
+373.24,375.00,1.76,You'd need millions of perfect responses
+375.16,376.36,1.20,for every possible question.
+376.70,377.90,1.20,That doesn't scale.
+378.40,379.26,0.86,So they got creative.
+379.34,380.76,1.42,They used human preferences.
+381.74,382.42,0.68,Here's the insight.
+383.36,386.14,2.78,Humans are terrible at rating things on an absolute scale.
+387.44,389.86,2.42,Is this response 7 out of 10 or 8 out of 10?
+390.94,393.46,2.52,"Hard to say, but humans are excellent at comparisons."
+394.90,396.88,1.98,Is response A better than response B?
+397.88,398.18,0.30,Instant.
+398.26,398.80,0.54,Easy.
+399.24,400.20,0.96,So here's what they did.
+401.20,403.60,2.40,Generate two different responses to the same question.
+404.60,405.30,0.70,Show them to a human.
+405.82,407.16,1.34,Human picks which one is better.
+407.82,409.10,1.28,Do this thousands of times.
+410.14,412.70,2.56,"Now you have a data set of preferences, comparisons."
+413.66,415.54,1.88,Then train a model to predict these preferences.
+416.52,419.06,2.54,The model learns to score responses the way a human would.
+419.64,421.00,1.36,This becomes your reward model.
+421.90,424.74,2.84,This whole process is called RLHF.
+426.06,427.92,1.86,Reinforcement learning from human feedback.
+429.48,430.10,0.62,Three stages.
+431.10,431.62,0.52,Stage one.
+432.72,434.86,2.14,Fine-tune the base model on curated examples.
+435.84,437.16,1.32,Gets you maybe 80% there.
+437.96,438.60,0.64,Stage two.
+438.98,441.36,2.38,Train that reward model on human comparisons.
+442.12,444.00,1.88,Now you can score any response automatically.
+445.04,445.60,0.56,Stage three.
+446.18,448.66,2.48,Use reinforcement learning to optimize your language model.
+449.64,450.48,0.84,Generator response.
+450.98,451.33,0.35,Score it.
+451.33,452.40,1.07,Update the model.
+453.20,454.10,0.90,But here's the catch.
+454.30,457.48,3.18,"If you just maximize the reward, the model breaks."
+457.62,459.14,1.52,It discovers exploits.
+460.32,462.80,2.48,Maybe it learns that really long responses score well.
+463.56,465.74,2.18,"So it generates 5,000 words of repetition."
+466.76,467.24,0.48,High score.
+467.50,468.36,0.86,Useless.
+468.82,470.88,2.06,The model hacks the reward function.
+471.70,473.00,1.30,So the objective has a constraint.
+473.02,475.52,2.50,"Maximize reward, but don't drift too far"
+475.52,476.50,0.98,from the original model.
+477.64,478.60,0.96,Think of it like a leash.
+479.14,481.86,2.72,"The model can explore, but only so far."
+482.02,484.18,2.16,This keeps it tethered to the original model
+484.20,485.82,1.62,which actually knows how to speak English.
+486.42,488.88,2.46,"Technically, this is measured with KL divergence."
+489.64,491.72,2.08,"If your new model assigns very different probabilities,"
+491.88,492.83,0.95,you penalize it.
+492.83,496.40,3.57,There's a parameter beta that controls how tight the leash is.
+497.48,497.92,0.44,Too tight.
+498.38,499.18,0.80,Model can't improve.
+499.62,500.12,0.50,Too loose.
+500.42,502.34,1.92,Model forgets language while chasing the reward.
+503.70,504.90,1.20,Getting this right is critical.
+504.90,508.30,3.40,"So before RLHF, you ask, what's the weather?"
+508.30,511.52,3.22,And you get the weather is the state of the atmosphere.
+513.06,513.56,0.50,Wikipedia facts.
+514.60,515.22,0.62,Unhelpful.
+516.26,518.02,1.76,"After RLHF, same question."
+519.16,520.71,1.55,"I don't have access to current weather data,"
+520.71,521.94,1.23,but I can help you find it.
+522.38,523.72,1.34,What location are you asking about?
+524.92,525.54,0.62,See the difference?
+525.98,526.50,0.52,Night and day.
+527.72,529.36,1.64,But notice what it still can't do.
+529.62,531.48,1.86,It can't actually check the weather.
+531.74,533.56,1.82,It's still just generating text.
+534.52,535.34,0.82,Limitation two.
+536.16,537.20,1.04,Can't take real actions.
+537.98,541.64,3.66,And that limitation led directly to the next breakthrough.
+543.22,545.44,2.22,Giving model's hands function calling.
+546.02,547.02,1.00,Here's the key insight.
+547.84,550.21,2.37,What if we train the model to output structured data
+550.21,553.50,3.29,"that our code can intercept and execute, not just text,"
+553.72,555.24,1.52,"instructions, function calls?"
+556.80,557.58,0.78,Here's how it works.
+557.74,560.32,2.58,"You define a function, something like get weather."
+560.98,562.58,1.60,Parameters are location and unit.
+563.42,565.78,2.36,This function definition goes into the model's context.
+565.82,568.86,3.04,"User asks, what's the weather in Tokyo?"
+569.58,571.68,2.10,The model generates structured JSON.
+571.68,573.36,1.68,Function name is get weather.
+574.60,576.86,2.26,"Arguments are location, Tokyo, and unit Celsius."
+578.06,580.66,2.60,Your code intercepts this and executes the actual function.
+582.14,583.38,1.24,Makes a real API call.
+583.38,584.64,1.26,Real data comes back.
+585.56,587.58,2.02,"Temperature 22, condition sunny."
+588.42,590.42,2.00,This result goes back into the model's context.
+591.06,592.50,1.44,The model generates again.
+593.50,596.46,2.96,It's 22 degrees Celsius and sunny and Tokyo right now.
+597.64,598.56,0.92,Look at what just happened.
+598.74,600.80,2.06,The model made a decision to call a function
+600.82,602.16,1.34,instead of answering directly.
+602.96,605.00,2.04,It extracted the parameters from natural language
+605.02,606.38,1.36,and this unlocked everything.
+607.88,608.88,1.00,Calculator for math.
+609.46,610.70,1.24,Search for current information.
+611.96,612.68,0.72,Database queries.
+613.44,613.72,0.28,Email.
+614.38,615.00,0.62,File access.
+615.64,616.38,0.74,Code execution.
+617.60,619.44,1.84,The model can now touch the real world.
+619.78,625.14,5.36,"But then someone says, plan my Europe trip and watch what happens."
+626.38,628.00,1.62,The model calls search flights.
+628.06,629.62,1.56,Gets back 50 options.
+630.64,632.98,2.34,"That's about 10,000 tokens flooding into the context."
+634.00,634.88,0.88,Call search hotels.
+635.64,636.94,1.30,"Another 8,000 tokens."
+637.62,638.46,0.84,Transport options.
+639.16,640.04,0.88,"5,000 more."
+640.86,642.36,1.50,"We're at 23,000 tokens."
+643.04,645.82,2.78,"Just for one city, the context window has limits."
+646.60,648.96,2.36,"Early GPT-4 had 8,000 tokens."
+649.88,651.52,1.64,"Later extended to 32,000."
+652.56,655.46,2.90,"More importantly, complex tasks need many function calls."
+656.12,657.92,1.80,Each one dumps data into the context.
+659.04,661.96,2.92,"After 10 or 12 calls, you overflow."
+662.76,663.76,1.00,The context is full.
+664.36,665.00,0.64,Mid-task.
+665.46,666.38,0.92,The whole thing crashes.
+667.54,668.34,0.80,Limitation three.
+668.86,671.28,2.42,Multi-step tasks overflow the context window.
+671.90,673.16,1.26,Someone needed to solve this.
+674.52,675.59,1.07,Breaking down complexity.
+675.59,676.34,0.75,Work flows.
+677.26,678.14,0.88,Here's the core insight.
+679.26,680.88,1.62,Don't keep everything in one context.
+681.48,682.62,1.14,Break the task into steps.
+683.70,685.22,1.52,Each step has its own context.
+685.94,687.66,1.72,Steps only pass forward what's needed.
+689.06,689.44,0.38,Summaries.
+690.02,690.62,0.60,Not everything.
+691.26,692.18,0.92,Think of it like a graph.
+692.82,693.48,0.66,Nodes and arrows.
+694.22,697.48,3.26,"Each node does one thing, passes outputs to the next node."
+698.38,699.92,1.54,Watch this Europe trip workflow.
+700.50,701.64,1.14,First node searches flights.
+702.34,703.84,1.50,API returns 50 options.
+704.48,705.34,0.86,"10,000 tokens."
+706.08,708.03,1.95,But this node doesn't pass all of that forward.
+708.03,708.74,0.71,It filters.
+709.78,710.32,0.54,Top three.
+710.60,711.62,1.02,Now it's 600 tokens.
+712.76,713.84,1.08,94% reduction.
+714.82,716.06,1.24,Second node searches hotels.
+716.86,717.82,0.96,Gets 30 hotels.
+718.88,719.78,0.90,"8,000 tokens."
+720.90,721.90,1.00,Filters to top two.
+722.72,724.40,1.68,Passes forward 400 tokens.
+725.66,726.96,1.30,Third node handles transport.
+728.10,728.86,0.76,20 options.
+728.88,730.06,1.18,"5,000 tokens."
+730.80,731.74,0.94,Filters to best three.
+732.34,733.98,1.64,Passes forward 300 tokens.
+735.58,736.20,0.62,See what's happening?
+737.58,740.26,2.68,Each node processes massive amounts of data internally.
+740.80,742.96,2.16,But it only passes a summary to the next node.
+744.50,745.24,0.74,Total context.
+746.08,748.12,2.04,600 plus 400 plus 300.
+748.76,750.04,1.28,"About 1,300 tokens."
+750.90,754.56,3.66,"Instead of 23,000, you've broken the accumulation problem."
+754.66,757.26,2.60,And you can implement logic with the graph structure.
+758.84,759.58,0.74,Decision nodes.
+760.62,761.54,0.92,Parallel execution.
+762.72,764.70,1.98,Error handling with exponential back off.
+765.82,767.22,1.40,This solved the context problem.
+768.20,769.98,1.78,You can chain together dozens of operations
+770.04,771.18,1.14,without running out of memory.
+772.22,774.72,2.50,But then this happens.
+776.08,779.06,2.98,"User says, actually, I want to stop in London"
+779.10,780.16,1.06,for two days on the way.
+780.86,781.68,0.82,"Simple change, right?"
+782.34,784.50,2.16,And your workflow shatters.
+784.78,787.90,3.12,Because the graph was designed for one specific path.
+788.98,791.66,2.68,"Search direct flight, search hotel, book everything."
+792.26,794.08,1.82,It has no nodes for multi-city flights.
+794.24,796.02,1.78,You'd have to redesign the entire workflow.
+797.00,798.28,1.28,Work flows execute plans.
+799.14,801.20,2.06,They're amazing at following a predetermined sequence.
+801.92,802.90,0.98,But they don't make plans.
+803.34,804.08,0.74,They can't adapt.
+805.28,806.02,0.74,Limitation four.
+806.62,807.20,0.58,Can't adapt.
+808.16,808.48,0.32,Brittle.
+808.98,809.36,0.38,Rigid.
+810.18,811.24,1.06,Which brings us to agents.
+812.28,813.56,1.28,When systems start thinking.
+814.26,815.12,0.86,Remember that request?
+816.06,818.82,2.76,I want to stop in London for two days on the way to Paris.
+819.56,820.82,1.26,The one that shattered the workflow.
+821.60,822.04,0.44,Agents.
+822.76,824.72,1.96,Agents don't execute predefined steps.
+825.12,825.62,0.50,They reason.
+825.70,826.66,0.96,They use a loop.
+826.82,827.30,0.48,Think.
+827.38,828.12,0.74,Act.
+828.78,829.60,0.82,Observe what happened.
+830.08,830.58,0.50,Think again.
+830.70,831.46,0.76,Repeat.
+833.06,833.76,0.70,Here's the prompt.
+834.64,835.36,0.72,You have these tools.
+835.70,838.68,2.98,"Search flights, book hotel, calculate, use this format."
+840.06,840.90,0.84,Thought you're reasoning.
+841.56,842.78,1.22,"Action, which tool to use."
+842.78,844.56,1.78,"Observation, I'll give you the result."
+845.52,846.78,1.26,Final answer when you're done.
+847.94,848.38,0.44,That's it.
+848.90,849.54,0.64,No flow chart.
+849.76,850.66,0.90,No hard-coded paths.
+850.66,851.90,1.24,Just tools in a format.
+852.80,855.68,2.88,"User asks, I want to stop in London for two days"
+855.74,856.48,0.74,on the way to Paris.
+857.48,858.16,0.68,Iteration one.
+859.24,861.79,2.55,"The thought is, user wants a multi-city trip."
+861.79,863.98,2.19,I need flights and segments home to London
+864.20,864.96,0.76,then London to Paris.
+866.26,867.44,1.18,Where did this plan come from?
+868.92,869.97,1.05,Nobody programmed this.
+869.97,871.32,1.35,The model figured it out.
+871.98,874.12,2.14,"It has seen multi-city trips in its training data,"
+874.22,875.68,1.46,"learned the pattern, applied it here."
+876.72,878.08,1.36,The action is search multi-city.
+878.08,880.04,1.96,San Francisco to London then London to Paris.
+880.84,881.98,1.14,Your code executes this.
+882.18,885.26,3.08,"12 options, 450 to 890 pounds."
+886.22,888.54,2.32,"The observation comes back, found 12 options."
+888.86,890.80,1.94,This goes into the model's context.
+890.84,892.32,1.48,The model generates again.
+893.60,894.24,0.64,Iteration two.
+895.26,897.26,2.00,"The thought is, got flights."
+898.38,900.36,1.98,Now I need London accommodation for two nights.
+900.78,903.58,2.80,The model remembered two days from the original request.
+904.28,905.28,1.00,"Memory, reasoning."
+906.20,908.52,2.32,The action is search hotels in London for two nights.
+909.22,912.14,2.92,"Eight hotels, 120 to 350 pounds per night."
+912.68,913.40,0.72,Iteration three.
+914.54,917.58,3.04,"The thought is, better check the total cost before booking."
+918.64,919.78,1.14,Nobody told it to do this.
+920.60,923.20,2.60,"But the agent reasoned, before spending money,"
+923.40,924.32,0.92,verify the cost.
+924.58,925.70,1.12,This is strategic thinking.
+926.32,929.35,3.03,"Emerging from the language model, the action is calculate."
+929.35,932.82,3.47,890 plus two times 180 plus 150.
+934.58,935.52,0.94,1400 pounds.
+936.08,936.82,0.74,Iteration four.
+936.94,939.32,2.38,"The thought is, budget looks good."
+939.68,940.42,0.74,Let's book everything.
+942.02,943.58,1.56,The action is book multi-city.
+944.24,944.94,0.70,Booking confirmed.
+945.24,945.82,0.58,Final answer.
+947.08,947.56,0.48,All booked.
+948.56,951.24,2.68,You'll be in London June 15th through 17th at Hotel Strand
+951.36,953.44,2.08,"then Paris, June 17th through 24th."
+954.90,957.64,2.74,"That workflow that completely shattered, the agent just"
+957.64,958.08,0.44,solved it.
+958.44,959.78,1.34,"First try, no redesign."
+960.74,962.14,1.40,Think about what it did autonomously.
+962.98,963.80,0.82,Broke down the problem.
+964.80,967.86,3.06,"Chose which tools to use and when, made decisions,"
+968.68,970.66,1.98,executed four tool calls in sequence.
+971.62,973.92,2.30,Synthesized everything into a coherent answer.
+974.48,975.72,1.24,You didn't program this logic.
+975.96,977.36,1.40,You gave it tools and a goal.
+978.02,978.94,0.92,It figured out the rest.
+979.60,980.24,0.64,Here's what matters.
+981.20,983.28,2.08,"Agents don't just execute, they think."
+984.00,986.86,2.86,"Each iteration, the model sees the full history, every thought,"
+986.88,988.24,1.36,"every action, every result."
+989.22,991.80,2.58,It conditions on that history to decide what to do next.
+991.98,994.62,2.64,The same loop handles simple and complex tasks.
+996.18,997.00,0.82,What's two plus two?
+997.98,998.50,0.52,One iteration.
+1000.04,1001.70,1.66,Plan my Europe trip with multiple stops.
+1003.20,1003.78,0.58,Ten iterations.
+1003.86,1004.98,1.12,Same mechanism.
+1006.12,1007.02,0.90,But there's a trade-off.
+1007.46,1009.06,1.60,"Workflows are predictable, reliable."
+1009.68,1011.56,1.88,"Agents are flexible, but unpredictable."
+1012.66,1014.96,2.30,"Sometimes brilliant, sometimes stuck in loops."
+1015.64,1016.44,0.80,This is the frontier.
+1017.08,1019.94,2.86,"Agents unlock adaptive reasoning, but they're less reliable."
+1020.48,1021.28,0.80,The complete chain.
+1021.90,1022.96,1.06,Here's the complete chain.
+1023.58,1025.44,1.86,"2017, Transformers."
+1026.48,1028.36,1.88,Unlocked text generation through attention.
+1028.76,1029.24,0.48,Hit the wall.
+1029.82,1030.94,1.12,No concept of being helpful.
+1032.98,1033.00,0.02,2020.
+1034.10,1035.50,1.40,RLHF.
+1036.76,1038.40,1.64,Unlocked alignment with human preferences.
+1039.50,1040.02,0.52,Hit the wall.
+1041.20,1042.24,1.04,Can't take real actions.
+1043.24,1044.10,0.86,2022.
+1045.02,1045.60,0.58,Function calling.
+1046.20,1047.42,1.22,Unlocked real tool use.
+1048.30,1048.82,0.52,Hit the wall.
+1049.84,1051.86,2.02,Context explodes on multi-step tasks.
+1052.76,1053.46,0.70,2023.
+1053.50,1054.40,0.90,Workflows.
+1055.34,1057.70,2.36,Unlocked complex orchestration with bounded context.
+1058.86,1059.36,0.50,Hit the wall.
+1060.28,1061.42,1.14,Can't adapt to new requirements.
+1062.32,1062.98,0.66,2024.
+1063.90,1064.38,0.48,Agents.
+1064.96,1067.56,2.60,Unlocked adaptive reasoning through think-act-observe loops.
+1068.74,1069.24,0.50,Trade-off.
+1070.06,1071.84,1.78,"Less predictable, but far more flexible."
+1073.34,1073.90,0.56,See the pattern?
+1075.34,1077.40,2.06,Each breakthrough unlocked new capabilities.
+1078.12,1079.58,1.46,Each capability hit a hard limit.
+1079.88,1081.32,1.44,Each limit forced the next invention.
+1081.46,1082.20,0.74,This wasn't planned.
+1082.44,1083.04,0.60,It was inevitable.
+1084.02,1085.68,1.66,Each step made the next step necessary.
+1087.20,1088.52,1.32,The limitations were in bugs.
+1089.10,1091.54,2.44,They were signposts pointing to what needed to be invented
+1091.58,1091.98,0.40,next.
+1092.52,1093.12,0.60,Seven years.
+1094.20,1096.74,2.54,"From attention is all you need to agents that can reason and plan,"
+1096.92,1098.36,1.44,"not because someone designed it that way,"
+1099.06,1100.58,1.52,because it couldn't have happened any other way.
+1101.58,1102.52,0.94,The chain was inevitable.
+1103.50,1104.20,0.70,Thanks for watching.
